@@ -72,9 +72,7 @@ function getReviewList(coords) {
 }
 
 // почему вынесена функция здесь?
-acync
-
-function openBalloon(map, coords, clusterer, fn) {
+async function openBalloon(map, coords, clusterer, fn) {
     await map.balloon.open(coords, {
         content: `<div class="reviews">${getReviewList(coords)} </div>${formTemplate}`,
     });
@@ -89,7 +87,7 @@ function openBalloon(map, coords, clusterer, fn) {
                 // что тут идет дальще?
                 author: this.elements.author.value,
                 place: this.elements.place.value,
-                reviewText: this.elements.review.value,
+                reviewText: this.elements.rewiew.value,
             })
             // что за строка идет дальше ! ? :
             !fn ? addCluster(map, coords) : fn()
